@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import Answer from './answer'
 import {connect} from 'react-redux'
+
 class Action extends Component{
     constructor(props){
         super(props);
@@ -15,6 +16,7 @@ class Action extends Component{
     }
     componentDidMount(){
         console.log("getting props",this.state.like_param)
+        console.log("question id",this.state.question_id)
         let length=this.state.like_param.length
         for(let i=0;i<this.state.like_param.length && length > 0;i++)
         {
@@ -98,10 +100,11 @@ class Action extends Component{
         )
     }
 }
+
 const mapStateToProps=state=>{
     console.log("State",state)
     return{
       data:state
     }
   }
-  export default connect(mapStateToProps)(Action)
+export default connect(mapStateToProps)(Action)

@@ -32,6 +32,7 @@ class Answer extends Component{
             })
             .then(data=>{
                 console.log("data fetched",data)
+                window.location.reload()
                 
             })
             .catch(err=>{
