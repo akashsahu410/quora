@@ -49,7 +49,7 @@ app.post("/upvote",async (req,res)=>{
     try{
         let userdata;
         console.log("inside question router",req.body);
-        if(req.body.upvotetoggle === true){
+        if(req.body.upvotetoggle === false){
             userdata=await userapi.saveupvotedata({"_id":req.body._id},{"name":req.body.name})
         }
         else{
